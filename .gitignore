@@ -1,0 +1,19 @@
+# 忽略venv下的文件
+venv/
+.venv/
+venv.*/
+.venv.*/
+# 忽略pycache下的文件
+__pycache__/
+*.pyc
+*.pyo
+# 忽略build下的文件
+build/
+# 忽略dist下的文件
+dist/
+# 忽略.pytest_cache下的文件
+.pytest_cache/
+# 忽略.vscode下的文件
+.vscode/
+# 忽略.idea下的文件
+.idea/
