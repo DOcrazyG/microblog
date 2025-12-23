@@ -1,11 +1,10 @@
 # create venv
 ```bash
-python3 -m venv venv
-source venv/bin/activate
+uv init
 ```
 # install requirements
 ```bash
-pip install -r requirements.txt
+uv sync
 ```
 # run
 ```bash
