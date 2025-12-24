@@ -1,11 +1,12 @@
+from datetime import datetime, timezone
 from typing import Optional
-from app import db
+
 import sqlalchemy as sa
 import sqlalchemy.orm as so
-from datetime import datetime, timezone
-from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
-from app import login
+from werkzeug.security import check_password_hash, generate_password_hash
+
+from app import db, login
 
 
 class User(UserMixin, db.Model):

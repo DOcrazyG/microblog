@@ -1,11 +1,12 @@
-from app import app, db
-from flask import render_template, flash, redirect, url_for
-from app.forms import LoginForm
-from flask_login import current_user, login_user, logout_user, login_required
-import sqlalchemy as sa
-from app.models import User
-from flask import request
 from urllib.parse import urlsplit
+
+import sqlalchemy as sa
+from flask import flash, redirect, render_template, request, url_for
+from flask_login import current_user, login_required, login_user, logout_user
+
+from app import app, db
+from app.forms import LoginForm
+from app.models import User
 
 
 @app.route("/")
