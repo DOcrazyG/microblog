@@ -1,6 +1,6 @@
 import sqlalchemy as sa
 from flask_wtf import FlaskForm
-from wtforms import BooleanField, PasswordField, StringField, SubmitField
+from wtforms import BooleanField, PasswordField, StringField, SubmitField, TextAreaField
 from wtforms.validators import DataRequired, Email, EqualTo, Length, ValidationError
 
 from app import db
@@ -53,4 +53,11 @@ class EditProfileForm(FlaskForm):
 
 
 class EmptyForm(FlaskForm):
+    submit = SubmitField("Submit")
+
+
+class PostForm(FlaskForm):
+    post = TextAreaField(
+        "Say something", validators=[DataRequired(), Length(min=1, max=140)]
+    )
     submit = SubmitField("Submit")
