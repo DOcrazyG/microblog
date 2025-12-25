@@ -19,3 +19,5 @@ dist/
 .idea/
 # 忽略.env文件
 .env
+# 忽略日志文件
+*.log
