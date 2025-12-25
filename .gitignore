@@ -17,3 +17,5 @@ dist/
 .vscode/
 # 忽略.idea下的文件
 .idea/
+# 忽略.env文件
+.env
