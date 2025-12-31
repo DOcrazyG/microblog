@@ -21,6 +21,8 @@ class Config:
     MAIL_PASSWORD = os.getenv("MAIL_PASSWORD")
     ADMINS = ["1379825060@qq.com"]
 
+    LANGUAGES = ["en", "es"]
+
 
 if __name__ == "__main__":
     print(Config.SECRET_KEY)
