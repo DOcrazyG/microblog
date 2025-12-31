@@ -15,7 +15,7 @@ def make_md5(s, encoding="utf-8"):
 def translate(text, source_language, dest_language):
     source_language = Language.from_part1(source_language).part2t
     dest_language = Language.from_part1(dest_language).part2t
-    
+
     if (
         "TRANSLATION_APP_ID" not in app.config
         and "TRANSLATION_API_KEY" not in app.config
@@ -39,4 +39,5 @@ def translate(text, source_language, dest_language):
     }
 
     r = requests.post(url, params=payload, headers=headers)
-    return r.json()["trans_result"][0]["dst"]
+    # return r.json()["trans_result"][0]["dst"]
+    return r.json()
