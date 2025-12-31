@@ -23,6 +23,9 @@ class Config:
 
     LANGUAGES = ["en", "es"]
 
+    TRANSLATION_APP_ID = os.getenv("TRANSLATION_APP_ID")
+    TRANSLATION_API_KEY = os.getenv("TRANSLATION_API_KEY")
+
 
 if __name__ == "__main__":
     print(Config.SECRET_KEY)
