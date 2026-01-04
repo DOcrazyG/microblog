@@ -26,6 +26,8 @@ class Config:
     TRANSLATION_APP_ID = os.getenv("TRANSLATION_APP_ID")
     TRANSLATION_API_KEY = os.getenv("TRANSLATION_API_KEY")
 
+    ELASTICSEARCH_URL = os.getenv("ELASTICSEARCH_URL")
+
 
 if __name__ == "__main__":
     print(Config.SECRET_KEY)
