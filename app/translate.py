@@ -2,9 +2,8 @@ import random
 from hashlib import md5
 
 import requests
+from flask import current_app
 from flask_babel import _
-
-from app import app
 
 
 def make_md5(s, encoding="utf-8"):
@@ -16,13 +15,13 @@ def translate(text, source_language, dest_language):
     language_mapper = {"zh": "zh", "en": "en", "fr": "fra", "ja": "jp", "de": "de"}
 
     if (
-        "TRANSLATION_APP_ID" not in app.config
-        and "TRANSLATION_API_KEY" not in app.config
+        "TRANSLATION_APP_ID" not in current_app.config
+        and "TRANSLATION_API_KEY" not in current_app.config
     ):
         return _("Error: the translation service is not configured.")
 
-    appid = app.config["TRANSLATION_APP_ID"]
-    api_key = app.config["TRANSLATION_API_KEY"]
+    appid = current_app.config["TRANSLATION_APP_ID"]
+    api_key = current_app.config["TRANSLATION_API_KEY"]
     url = "http://api.fanyi.baidu.com/api/trans/vip/translate"
     salt = random.randint(32768, 65536)
     sign = make_md5(appid + text + str(salt) + api_key)
